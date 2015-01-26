@@ -6,6 +6,7 @@ Create a Lambda function in your AWS account:
 
 ```
 $ zip -r lambda.zip index.js node_modules out
+$ lein npm install
 $ aws lambda upload-function \
   --region us-west-2 \
   --function-name dns-resolver \
@@ -29,5 +30,6 @@ Test the Lambda in the AWS console, with the following input:
 ## DIY
 
 1. `lein new mies-node my-lambda`
-2. Create an `index.js` to export your function
-3. `zip -r lambda.zip index.js node_modules out`
+2. `cd my-lambda && lein npm install`
+3. Create an `index.js` to export your function
+4. `zip -r lambda.zip index.js node_modules out`
